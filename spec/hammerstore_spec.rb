@@ -4,15 +4,16 @@ require 'set'
 describe HammerStore do
   describe '#new' do
     it 'creates store objects' do
-      expect(HammerStore.new).to be_an_instance_of HammerStore::Store
+      test = HammerStore.new 'teststore'
+      expect(test).to be_an_instance_of HammerStore::Store
     end
   end
 
   describe HammerStore::Store do
     let(:keys) { [1, 2, 3, 4, 5, :foo, 'foo'].to_set }
     let(:store) do
-      store = HammerStore::Store.new
-      store.raw.flushdb
+      store = HammerStore::Store.new 'teststore'
+      store.clear!
       (1..5).each { |i| store[i] = i + 5 }
       store[:foo] = :bar
       store['foo'] = 'bar'
@@ -21,7 +22,7 @@ describe HammerStore do
 
     describe '#initialize' do
       it 'creates a new store raw object' do
-        expect(store.raw).to be_an_instance_of Hammer
+        expect(store.raw).to be_an_instance_of Hammerspace::Hash
       end
     end
     describe '#clear!' do
