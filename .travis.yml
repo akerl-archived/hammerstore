@@ -10,7 +10,7 @@ install:
 - ./configure
 - make
 - sudo make install
-- cd
+- cd ~/akerl/hammerstore
 rvm:
 - 2.1.0
 - 2.0.0
