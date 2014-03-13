@@ -3,6 +3,7 @@ cache: bundler
 before_install:
 - sudo apt-get update
 install:
+- echo $(pwd)
 - sudo apt-get install libsnappy-dev
 - git clone git://github.com/spotify/sparkey.git
 - cd sparkey
@@ -10,13 +11,11 @@ install:
 - ./configure
 - make
 - sudo make install
-- cd ~/akerl/hammerstore
+- cd ~/hammerstore
 rvm:
 - 2.1.0
 - 2.0.0
 - 1.9.3
-services:
-- redis-server
 notifications:
   email: false
   irc:
