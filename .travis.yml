@@ -3,7 +3,7 @@ cache: bundler
 before_install:
 - sudo apt-get update
 install:
-- apt-get install libsnappy-dev
+- sudo apt-get install libsnappy-dev
 - git clone git://github.com/spotify/sparkey.git
 - cd sparkey
 - autoreconf --install
