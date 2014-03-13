@@ -1,5 +1,16 @@
 language: ruby
 cache: bundler
+before_install:
+- sudo apt-get update
+install:
+- apt-get install libsnappy-dev
+- git clone git://github.com/spotify/sparkey.git
+- cd sparkey
+- autoreconf --install
+- ./configure
+- make
+- sudo make install
+- cd
 rvm:
 - 2.1.0
 - 2.0.0
