@@ -1,0 +1,86 @@
+require 'hammerspace'
+
+##
+# Hammerspace-backed Store designed for BasicCache
+module HammerStore
+  class << self
+    ##
+    # Insert a helper .new() method for creating a new Store object
+
+    def new(*args)
+      self::Store.new(*args)
+    end
+  end
+
+  ##
+  # Hammerspace-backed store object
+  class Store
+    attr_reader :raw
+
+    ##
+    # Generate an empty store
+
+    def initialize(file)
+      @raw = Hammerspace.new(file)
+    end
+
+    ##
+    # Clears a specified key or the whole store
+
+    def clear!(key = nil)
+      if key.nil?
+        @raw.clear && {}
+      else
+        key = prep(key)
+        value = @raw[key]
+        @raw.delete key
+        parse value
+      end
+    end
+
+    ##
+    # Retrieve a key
+
+    def [](key)
+      parse @raw[prep(key)]
+    end
+
+    ##
+    # Set a key
+
+    def []=(key, value)
+      @raw[prep(key)] = prep(value)
+    end
+
+    ##
+    # Return the size of the store
+
+    def size
+      @raw.size
+    end
+
+    ##
+    # Check for a key in the store
+
+    def include?(key)
+      @raw.key? prep(key)
+    end
+
+    ##
+    # Array of keys in the store
+
+    def keys
+      @raw.keys.map { |x| parse x }
+    end
+
+    private
+
+    def prep(object)
+      Marshal.dump object
+    end
+
+    def parse(object)
+      object.nil? ? nil : Marshal.load(object)
+    end
+  end
+end
