@@ -2,7 +2,6 @@ language: ruby
 cache: bundler
 before_install:
 - sudo apt-get update
-install:
 - echo $(pwd)
 - sudo apt-get install libsnappy-dev
 - git clone git://github.com/spotify/sparkey.git
