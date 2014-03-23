@@ -22,6 +22,30 @@ cache = BasicCache.new store
 
 ## Installation
 
+### Dependencies
+
+You'll need to have [sparkey](https://github.com/spotify/sparkey) installed in order to install the dependencies for hammerstore. To do this on Debian/Ubuntu, run the following:
+
+```
+apt-get install libsnappy-dev
+git clone git://github.com/spotify/sparkey.git
+cd sparkey
+autoreconf --install
+./configure --prefix=/usr
+make
+make install
+```
+
+To do this on a Mac, run the following:
+
+```
+brew install https://raw.githubusercontent.com/akerl/homebrew-formulae/master/sparkey.rb
+```
+
+### Hammerstore
+
+Now install hammerstore itself:
+
     gem install hammerstore
 
 ## License
