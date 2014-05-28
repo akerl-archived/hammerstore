@@ -15,13 +15,14 @@ module HammerStore
   ##
   # Hammerspace-backed store object
   class Store
-    attr_reader :raw
+    attr_reader :raw, :file
 
     ##
     # Generate an empty store
 
-    def initialize(file)
-      @raw = Hammerspace.new(file)
+    def initialize(params = {})
+      @file = params[:file] || fail('You must specify a file')
+      @raw = Hammerspace.new(@file)
     end
 
     ##
