@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.test_files  = `git ls-files spec/*`.split
 
   s.add_dependency 'basiccache', '~> 0.1.0'
+  s.add_dependency 'gnista', '~> 1.0.0'
   s.add_dependency 'hammerspace', '~> 0.1.2'
 
   s.add_development_dependency 'rubocop', '~> 0.22.0'

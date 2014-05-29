@@ -44,23 +44,6 @@ To do this on a Mac, run the following:
 brew install https://raw.githubusercontent.com/akerl/homebrew-formulae/master/sparkey.rb
 ```
 
-### gnista
-
-On OSX, the released gnista gem (version 0.0.5) can't be used due to [a segfault bug](https://github.com/emnl/gnista/pull/4). You can download and install the fixed version manually:
-
-```
-git clone git://github.com/emnl/gnista
-cd gnista
-rake install
-```
-
-If your libraries and includes are installed in custom locations, you'll need to specify that:
-
-```
-rake build
-gem install pkg/gnista-0.0.5.gem -- --with-gnista-lib=/usr/local/brew/lib --with-gnista-include=/usr/local/brew/include
-```
-
 ### Hammerstore
 
 Now install hammerstore itself:
