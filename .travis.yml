@@ -11,6 +11,8 @@ before_install:
 - sudo make install
 - cd /home/travis/build/akerl/hammerstore
 rvm:
+- 2.1.2
+- 2.1.1
 - 2.1.0
 - 2.0.0
 - 1.9.3
