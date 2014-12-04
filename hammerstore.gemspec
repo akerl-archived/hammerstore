@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'basiccache', '~> 0.2.2'
   s.add_dependency 'gnista', '~> 1.0.0'
-  s.add_dependency 'hammerspace', '~> 0.1.4'
+  s.add_dependency 'hammerspace-fork', '~> 0.1.5.1'
 
   s.add_development_dependency 'rubocop', '~> 0.27.0'
   s.add_development_dependency 'rake', '~> 10.4.0'
