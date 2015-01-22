@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files`.split
   s.test_files  = `git ls-files spec/*`.split
 
-  s.add_dependency 'basiccache', '~> 0.2.2'
+  s.add_dependency 'basiccache', '~> 1.0.0'
   s.add_dependency 'gnista', '~> 1.0.0'
   s.add_dependency 'hammerspace-fork', '~> 0.1.5.1'
 
