@@ -11,15 +11,14 @@ before_install:
 - sudo make install
 - cd /home/travis/build/akerl/hammerstore
 rvm:
-- 2.1.2
-- 2.1.1
-- 2.1.0
-- 2.0.0
-- 1.9.3
+- 2.2.0
+- 2.1.5
+- 2.0.0-p598
+- 1.9.3-p551
 notifications:
   email: false
   irc:
     channels:
-      secure: hkPXdLuGLuCCciK79SXxjWa8BHtaCjBH29ReuAjtyFb/PQcrb/yGOP7L2YVM5uP1dAIv1RQM0CLRdHvXK0f8nlU9y+i10dRXGf4REyan3xW8n+cpMQrd1thm1Kf8q/leLjRuwpwcIFuO2SSyO8/2rwqdy2+BhCMPDg2jXzecd9Q=
+    - irc.oftc.net#akerl
     template:
     - "%{repository}/%{branch}/%{build_number}: %{message} -- %{build_url}"
