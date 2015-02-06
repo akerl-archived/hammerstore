@@ -26,7 +26,7 @@ describe HammerStore do
     describe '#clear!' do
       describe 'when given no argument' do
         it 'empties the store' do
-          expect(store.clear!).to eql Hash.new
+          expect(store.clear!).to eql {}
         end
       end
       describe 'when given an argument' do
