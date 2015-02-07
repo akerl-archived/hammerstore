@@ -19,8 +19,8 @@ describe HammerStore do
     end
 
     describe '#initialize' do
-      it 'creates a new store raw object' do
-        expect(store.raw).to be_an_instance_of Hammerspace::Hash
+      it 'creates a new store data object' do
+        expect(store.data).to be_an_instance_of Hammerspace::Hash
       end
     end
     describe '#clear!' do

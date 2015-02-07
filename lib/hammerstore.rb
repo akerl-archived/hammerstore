@@ -15,14 +15,14 @@ module HammerStore
   ##
   # Hammerspace-backed store object
   class Store
-    attr_reader :raw, :file
+    attr_reader :data, :file
 
     ##
     # Generate an empty store
 
     def initialize(params = {})
       @file = params[:file] || fail('You must specify a file')
-      @raw = Hammerspace.new(@file)
+      @data = Hammerspace.new(@file)
     end
 
     ##
@@ -30,11 +30,11 @@ module HammerStore
 
     def clear!(key = nil)
       if key.nil?
-        @raw.clear && {}
+        @data.clear && {}
       else
         key = prep(key)
-        value = @raw[key]
-        @raw.delete key
+        value = @data[key]
+        @data.delete key
         parse value
       end
     end
@@ -43,35 +43,35 @@ module HammerStore
     # Retrieve a key
 
     def [](key)
-      parse @raw[prep(key)]
+      parse @data[prep(key)]
     end
 
     ##
     # Set a key
 
     def []=(key, value)
-      @raw[prep(key)] = prep(value)
+      @data[prep(key)] = prep(value)
     end
 
     ##
     # Return the size of the store
 
     def size
-      @raw.size
+      @data.size
     end
 
     ##
     # Check for a key in the store
 
     def include?(key)
-      @raw.key? prep(key)
+      @data.key? prep(key)
     end
 
     ##
     # Array of keys in the store
 
     def keys
-      @raw.keys.map { |x| parse x }
+      @data.keys.map { |x| parse x }
     end
 
     private
