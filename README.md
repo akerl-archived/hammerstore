@@ -8,7 +8,7 @@ hammerstore
 [![Build Status](https://img.shields.io/travis/akerl/hammerstore.svg)](https://travis-ci.org/akerl/hammerstore)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 
-[Hammerspace](https://github.com/airbnb/hammerspace) storage backend for [BasicCache](https://github.com/akerl/basiccache)
+[Hammerspace](https://github.com/akerl/hammerspace) storage backend for [BasicCache](https://github.com/akerl/basiccache)
 
 ## Usage
 
