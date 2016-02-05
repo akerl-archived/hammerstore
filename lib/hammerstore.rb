@@ -21,7 +21,7 @@ module HammerStore
     # Generate an empty store
 
     def initialize(params = {})
-      @file = params[:file] || fail('You must specify a file')
+      @file = params[:file] || raise('You must specify a file')
       @data = Hammerspace.new(@file)
     end
 
