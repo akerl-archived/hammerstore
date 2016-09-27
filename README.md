@@ -3,7 +3,7 @@ hammerstore
 
 [![Gem Version](https://img.shields.io/gem/v/hammerstore.svg)](https://rubygems.org/gems/hammerstore)
 [![Dependency Status](https://img.shields.io/gemnasium/akerl/hammerstore.svg)](https://gemnasium.com/akerl/hammerstore)
-[![Build Status](https://img.shields.io/circleci/project/akerl/hammerstore.svg)](https://circleci.com/gh/akerl/hammerstore)
+[![Build Status](https://img.shields.io/circleci/project/akerl/hammerstore/master.svg)](https://circleci.com/gh/akerl/hammerstore)
 [![Coverage Status](https://img.shields.io/codecov/c/github/akerl/hammerstore.svg)](https://codecov.io/github/akerl/hammerstore)
 [![Code Quality](https://img.shields.io/codacy/ba031c40eb6d40b09ad8294770f8f7c9.svg)](https://www.codacy.com/app/akerl/hammerstore)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
