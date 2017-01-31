@@ -5,6 +5,7 @@ dependencies:
   - git clone git://github.com/spotify/sparkey.git
   - cd sparkey ; autoreconf --install ; ./configure --prefix=/usr ; sudo make install
   override:
+  - 'for i in $(cat .circle-ruby) ; do rvm-exec $i gem update --system --no-doc || exit 1 ; done'
   - 'for i in $(cat .circle-ruby) ; do rvm-exec $i bundle install || exit 1 ; done'
 test:
   override:
