@@ -1,2 +1,6 @@
 Encoding:
     Enabled: false
+Metrics/BlockLength:
+    Enabled: false
+MarshalLoad:
+    Enabled: false
