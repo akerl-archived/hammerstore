@@ -1,6 +1,2 @@
-Encoding:
-    Enabled: false
-Metrics/BlockLength:
-    Enabled: false
-MarshalLoad:
-    Enabled: false
+inherit_gem:
+  goodcop: .rubocop.yml
