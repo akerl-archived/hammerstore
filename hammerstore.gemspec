@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
   s.name        = 'hammerstore'
   s.version     = '1.0.0'
-  s.date        = Time.now.strftime("%Y-%m-%d")
+  s.date        = Time.now.strftime('%Y-%m-%d')
 
   s.summary     = 'Hammerspace backend for BasicCache'
-  s.description = "Stores cached values in Hammerspace"
+  s.description = 'Stores cached values in Hammerspace'
   s.authors     = ['Les Aker']
   s.email       = 'me@lesaker.org'
   s.homepage    = 'https://github.com/akerl/hammerstore'
