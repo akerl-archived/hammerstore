@@ -1,0 +1,14 @@
+dist: trusty
+install:
+- sudo apt-get update
+- sudo apt-get install -y libsnappy-dev
+- git clone git://github.com/spotify/sparkey.git
+- cd sparkey ; autoreconf --install ; ./configure --prefix=/usr ; sudo make install
+- for i in $(cat .circle-ruby) ; do rvm install $i || exit 1 ; done
+- for i in $(cat .circle-ruby) ; do rvm-exec $i bundle install || exit 1 ; done
+script:
+- for i in $(cat .circle-ruby) ; do rvm-exec $i bundle exec rake || exit 1 ; done
+notifications:
+  email: false
+  slack:
+    secure: XRX7B2bGJnUssm2riAFnE4AUcPbj0+qTyeIwhKCNzZ7b8jdmV2lpW/Sira8oPgsL4M1sEoE+J2VtvgfJd01dPPMJr3P6IEw+aFKhuEogqOYnUcSaIdII7+5cvquuJr5WKzjpjYtCOxrWkneFOuqS35t/iP5q1AHoPYd0lZpwvEkoumtm2hv/MTsZEJyaXbEuwcfMnDmIb8p+ubDN92ojRk0uBAl6kBrf9cEGFC1o9STwZU4pw88VnCQMMZ+dvtovEKdNnaMfMeonvhSR4JZ2E4+ZmOQc17qSvJcvHIl/iJBSf7F7kK0csqvSXz+rpknxjDmf7y5Udi7UTH7yz2op6P40tGsuoQkAqcXOcYROrkslE1ur75TobBwAfMXyyXSuowfkCqyp7S/fN3a3e5Atw4FB3p4Y7lOJg4Uxbi2Dr23EwP2cg6m9pxixagvj6l9ynur+QJAfPZ2NctKBG3nuqg2IhJnRFALbXrVxaqQEfThJyPVqAqOoM1sERZZSHYBJ0dnJDyfIJowrha7PDljdXPICnOeyOq6WSvG9/LzcdVqjfVDXXfcTOUOgvlGHDTElFYPR9xqXXnaGawm01pq1IDI+3N2Q+pF9p3cBHANoqJE1WEC+7RtPOPRToW4OZs+tlzHB2bi6PVhbLZVTsru7xwkMdpSbcXt/qVJHe+DXdnw=
